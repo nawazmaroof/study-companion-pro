@@ -14,7 +14,150 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      generated_content: {
+        Row: {
+          created_at: string
+          id: string
+          note_id: string
+          payload: Json
+          type: Database["public"]["Enums"]["content_type"]
+          user_id: string
+        }
+        Insert: {
+          created_at?: string
+          id?: string
+          note_id: string
+          payload: Json
+          type: Database["public"]["Enums"]["content_type"]
+          user_id: string
+        }
+        Update: {
+          created_at?: string
+          id?: string
+          note_id?: string
+          payload?: Json
+          type?: Database["public"]["Enums"]["content_type"]
+          user_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "generated_content_note_id_fkey"
+            columns: ["note_id"]
+            isOneToOne: false
+            referencedRelation: "notes"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      notes: {
+        Row: {
+          content: string
+          created_at: string
+          id: string
+          title: string
+          topic_id: string
+          updated_at: string
+          user_id: string
+        }
+        Insert: {
+          content?: string
+          created_at?: string
+          id?: string
+          title: string
+          topic_id: string
+          updated_at?: string
+          user_id: string
+        }
+        Update: {
+          content?: string
+          created_at?: string
+          id?: string
+          title?: string
+          topic_id?: string
+          updated_at?: string
+          user_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "notes_topic_id_fkey"
+            columns: ["topic_id"]
+            isOneToOne: false
+            referencedRelation: "topics"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      study_sessions: {
+        Row: {
+          duration_minutes: number
+          id: string
+          studied_at: string
+          summary: string | null
+          topic_id: string | null
+          user_id: string
+        }
+        Insert: {
+          duration_minutes?: number
+          id?: string
+          studied_at?: string
+          summary?: string | null
+          topic_id?: string | null
+          user_id: string
+        }
+        Update: {
+          duration_minutes?: number
+          id?: string
+          studied_at?: string
+          summary?: string | null
+          topic_id?: string | null
+          user_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "study_sessions_topic_id_fkey"
+            columns: ["topic_id"]
+            isOneToOne: false
+            referencedRelation: "topics"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      topics: {
+        Row: {
+          category: string
+          created_at: string
+          description: string | null
+          id: string
+          progress: number
+          status: Database["public"]["Enums"]["topic_status"]
+          title: string
+          updated_at: string
+          user_id: string
+        }
+        Insert: {
+          category?: string
+          created_at?: string
+          description?: string | null
+          id?: string
+          progress?: number
+          status?: Database["public"]["Enums"]["topic_status"]
+          title: string
+          updated_at?: string
+          user_id: string
+        }
+        Update: {
+          category?: string
+          created_at?: string
+          description?: string | null
+          id?: string
+          progress?: number
+          status?: Database["public"]["Enums"]["topic_status"]
+          title?: string
+          updated_at?: string
+          user_id?: string
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
@@ -23,7 +166,8 @@ export type Database = {
       [_ in never]: never
     }
     Enums: {
-      [_ in never]: never
+      content_type: "quiz" | "flashcards" | "bullets" | "cheatsheet"
+      topic_status: "pending" | "in_progress" | "completed"
     }
     CompositeTypes: {
       [_ in never]: never
@@ -150,6 +294,9 @@ export type CompositeTypes<
 
 export const Constants = {
   public: {
-    Enums: {},
+    Enums: {
+      content_type: ["quiz", "flashcards", "bullets", "cheatsheet"],
+      topic_status: ["pending", "in_progress", "completed"],
+    },
   },
 } as const
