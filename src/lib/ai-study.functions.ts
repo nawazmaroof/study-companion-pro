@@ -64,7 +64,7 @@ export const generateStudyContent = createServerFn({ method: "POST" })
 
     const { data: saved, error: saveErr } = await context.supabase
       .from("generated_content")
-      .insert({ note_id: data.noteId, type: data.type, user_id: context.userId, payload: payload as object })
+      .insert({ note_id: data.noteId, type: data.type, user_id: context.userId, payload: payload as never })
       .select()
       .single();
     if (saveErr) throw new Error(saveErr.message);
