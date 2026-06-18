@@ -47,7 +47,7 @@ function Landing() {
           </p>
           <div className="mt-10 flex flex-wrap items-center justify-center gap-3">
             <Link
-              to="/auth"
+              to="/study"
               className="lamp-glow rounded-md bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground hover:opacity-90 transition"
             >
               Open your study desk
