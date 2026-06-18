@@ -18,7 +18,7 @@ import { BookOpen, Brain, ChevronLeft, Layers, ListChecks, Pencil, Plus, Sparkle
 import { toast } from "sonner";
 
 export const Route = createFileRoute("/_authenticated/study")({
-  head: () => ({ meta: [{ title: "Study desk — Scriptorium" }] }),
+  head: () => ({ meta: [{ title: "Study desk — My_Study_Place" }] }),
   component: StudyPage,
 });
 
@@ -79,7 +79,7 @@ function StudyPage() {
             </button>
             <Link to="/" className="flex items-center gap-2">
               <BookOpen className="size-5 text-primary" />
-              <span className="font-display text-xl font-semibold">Scriptorium</span>
+              <span className="font-display text-xl font-semibold">My_Study_Place</span>
             </Link>
           </div>
         </div>
@@ -137,6 +137,9 @@ function StudyPage() {
           )}
         </main>
       </div>
+      <footer className="border-t border-border py-4 text-center text-xs text-muted-foreground">
+        © 2026 My_Study_Place. All rights reserved.
+      </footer>
     </div>
   );
 }
@@ -179,7 +182,7 @@ function EmptyState() {
       <Sparkles className="size-8 text-primary" />
       <h2 className="mt-4 font-display text-3xl">Begin a topic to start studying</h2>
       <p className="mt-2 max-w-md text-sm text-muted-foreground">
-        Add Java, React, SQL, Spring, Hibernate, DevOps — anything you're learning. Drop your notes inside and Scriptorium will turn them into quizzes, flashcards, summaries and cheatsheets.
+        Add Java, React, SQL, Spring, Hibernate, DevOps — anything you're learning. Drop your notes inside and My_Study_Place will turn them into quizzes, flashcards, summaries and cheatsheets.
       </p>
       <TopicDialog mode="create" trigger={<Button className="mt-6"><Plus className="size-4" /> Add your first topic</Button>} />
     </div>
