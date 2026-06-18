@@ -137,6 +137,9 @@ function StudyPage() {
           )}
         </main>
       </div>
+      <footer className="border-t border-border py-4 text-center text-xs text-muted-foreground">
+        © 2026 My_Study_Place. All rights reserved.
+      </footer>
     </div>
   );
 }
