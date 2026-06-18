@@ -69,13 +69,6 @@ function StudyPage() {
     };
   }, [topicsQ.data]);
 
-  async function handleSignOut() {
-    await qc.cancelQueries();
-    qc.clear();
-    await supabase.auth.signOut();
-    navigate({ to: "/auth", replace: true });
-  }
-
   return (
     <div className="min-h-screen flex flex-col">
       <header className="sticky top-0 z-30 border-b border-border bg-background/85 backdrop-blur">
@@ -89,9 +82,6 @@ function StudyPage() {
               <span className="font-display text-xl font-semibold">Scriptorium</span>
             </Link>
           </div>
-          <Button variant="ghost" size="sm" onClick={handleSignOut}>
-            <LogOut className="size-4" /> Sign out
-          </Button>
         </div>
       </header>
 
