@@ -37,7 +37,7 @@ type Note = { id: string; topic_id: string; title: string; content: string; crea
 type Generated = { id: string; note_id: string; type: "quiz" | "flashcards" | "bullets" | "cheatsheet"; payload: any; created_at: string };
 
 function StudyPage() {
-  const qc_unused = null; void qc_unused;
+  
   const qc = useQueryClient();
   const [selectedTopicId, setSelectedTopicId] = useState<string | null>(null);
   const [sidebarOpen, setSidebarOpen] = useState(false);
