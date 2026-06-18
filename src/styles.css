@@ -92,10 +92,11 @@
   body {
     font-family: var(--font-body);
     background-image:
+      linear-gradient(oklch(0.18 0.018 250 / 0.82), oklch(0.18 0.018 250 / 0.82)),
       url("/bg-study.jpg"),
       radial-gradient(ellipse 80% 50% at 50% -10%, oklch(0.82 0.13 78 / 0.08), transparent 60%),
       radial-gradient(ellipse 60% 40% at 100% 100%, oklch(0.45 0.06 250 / 0.25), transparent 70%);
-    background-size: cover, auto, auto;
+    background-size: auto, cover, auto, auto;
     background-position: center, 0 0, 0 0;
     background-attachment: fixed;
     background-repeat: no-repeat;
