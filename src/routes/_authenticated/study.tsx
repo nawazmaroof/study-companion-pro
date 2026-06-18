@@ -1,4 +1,4 @@
-import { createFileRoute, useNavigate, Link } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
 import { useEffect, useMemo, useState } from "react";
 import { useQuery, useQueryClient, useMutation } from "@tanstack/react-query";
 import { useServerFn } from "@tanstack/react-start";
@@ -14,7 +14,7 @@ import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger, DialogFooter } from "@/components/ui/dialog";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { AlertDialog, AlertDialogAction, AlertDialogCancel, AlertDialogContent, AlertDialogDescription, AlertDialogFooter, AlertDialogHeader, AlertDialogTitle, AlertDialogTrigger } from "@/components/ui/alert-dialog";
-import { BookOpen, Brain, ChevronLeft, Layers, ListChecks, LogOut, Pencil, Plus, Sparkles, Target, Trash2, Loader2, Menu, X } from "lucide-react";
+import { BookOpen, Brain, ChevronLeft, Layers, ListChecks, Pencil, Plus, Sparkles, Target, Trash2, Loader2, Menu, X } from "lucide-react";
 import { toast } from "sonner";
 
 export const Route = createFileRoute("/_authenticated/study")({
@@ -37,7 +37,7 @@ type Note = { id: string; topic_id: string; title: string; content: string; crea
 type Generated = { id: string; note_id: string; type: "quiz" | "flashcards" | "bullets" | "cheatsheet"; payload: any; created_at: string };
 
 function StudyPage() {
-  const navigate = useNavigate();
+  
   const qc = useQueryClient();
   const [selectedTopicId, setSelectedTopicId] = useState<string | null>(null);
   const [sidebarOpen, setSidebarOpen] = useState(false);
@@ -69,13 +69,6 @@ function StudyPage() {
     };
   }, [topicsQ.data]);
 
-  async function handleSignOut() {
-    await qc.cancelQueries();
-    qc.clear();
-    await supabase.auth.signOut();
-    navigate({ to: "/auth", replace: true });
-  }
-
   return (
     <div className="min-h-screen flex flex-col">
       <header className="sticky top-0 z-30 border-b border-border bg-background/85 backdrop-blur">
@@ -89,9 +82,6 @@ function StudyPage() {
               <span className="font-display text-xl font-semibold">Scriptorium</span>
             </Link>
           </div>
-          <Button variant="ghost" size="sm" onClick={handleSignOut}>
-            <LogOut className="size-4" /> Sign out
-          </Button>
         </div>
       </header>
 
