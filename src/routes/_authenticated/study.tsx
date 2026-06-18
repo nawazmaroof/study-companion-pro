@@ -18,7 +18,7 @@ import { BookOpen, Brain, ChevronLeft, Layers, ListChecks, Pencil, Plus, Sparkle
 import { toast } from "sonner";
 
 export const Route = createFileRoute("/_authenticated/study")({
-  head: () => ({ meta: [{ title: "Study desk — Scriptorium" }] }),
+  head: () => ({ meta: [{ title: "Study desk — My_Study_Place" }] }),
   component: StudyPage,
 });
 
@@ -79,7 +79,7 @@ function StudyPage() {
             </button>
             <Link to="/" className="flex items-center gap-2">
               <BookOpen className="size-5 text-primary" />
-              <span className="font-display text-xl font-semibold">Scriptorium</span>
+              <span className="font-display text-xl font-semibold">My_Study_Place</span>
             </Link>
           </div>
         </div>

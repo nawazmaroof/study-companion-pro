@@ -4,7 +4,7 @@ import { BookOpen, Brain, Layers, ListChecks, Sparkles, Target } from "lucide-re
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Scriptorium — Your Personal Study Workspace" },
+      { title: "My_Study_Place — Your Personal Study Workspace" },
       { name: "description", content: "Paste your notes. Get quizzes, flashcards, bullet summaries and code cheatsheets. Built for developers studying Java, React, SQL, Spring, Hibernate and DevOps." },
     ],
   }),
@@ -19,7 +19,7 @@ function Landing() {
       <header className="mx-auto flex max-w-6xl items-center justify-between px-6 py-6">
         <Link to="/" className="flex items-center gap-2">
           <BookOpen className="size-5 text-primary" />
-          <span className="font-display text-xl font-semibold tracking-tight">Scriptorium</span>
+          <span className="font-display text-xl font-semibold tracking-tight">My_Study_Place</span>
         </Link>
         <Link
           to="/study"
@@ -41,7 +41,7 @@ function Landing() {
             <span className="text-muted-foreground">Notes in. Mastery out.</span>
           </h1>
           <p className="mx-auto mt-6 max-w-2xl text-base md:text-lg text-muted-foreground">
-            Drop your study material — lecture notes, docs, code, anything. Scriptorium turns it into
+            Drop your study material — lecture notes, docs, code, anything. My_Study_Place turns it into
             quizzes, flashcards, bullet summaries and code cheatsheets, and tracks every topic you're
             studying so nothing slips.
           </p>
@@ -83,7 +83,8 @@ function Landing() {
       </main>
 
       <footer className="border-t border-border py-8 text-center text-xs text-muted-foreground">
-        Built for focused, distraction-free study.
+        <p>Built for focused, distraction-free study.</p>
+        <p className="mt-2">© 2026 My_Study_Place. All rights reserved.</p>
       </footer>
     </div>
   );
