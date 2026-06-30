@@ -11,7 +11,7 @@ export const Route = createFileRoute("/")({
   component: Landing,
 });
 
-const TRACKS = ["Java", "React", "SQL", "Hibernate", "Spring", "DevOps"];
+const TRACKS = ["Java", "Python", "React", "SQL", "MySQL", "JDBC", "Hibernate", "Spring", "DevOps"];
 
 function Landing() {
   return (
