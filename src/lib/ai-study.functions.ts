@@ -7,7 +7,7 @@ const Input = z.object({
   type: z.enum(["quiz", "flashcards", "bullets", "cheatsheet"]),
 });
 
-const SYSTEM = `You are an expert study coach. Always respond with STRICT JSON that matches the requested schema. Be concise, technically accurate, and tailored to programming and IT topics (Java, React, SQL, Hibernate, Spring, DevOps).`;
+const SYSTEM = `You are an expert study coach. Always respond with STRICT JSON that matches the requested schema. Be concise, technically accurate, and tailored to programming and IT topics (Java, Python, React, SQL, MySQL, JDBC, Hibernate, Spring, DevOps).`;
 
 function promptFor(type: string, title: string, content: string) {
   const base = `Topic: "${title}"\n\nStudy material:\n"""\n${content.slice(0, 12000)}\n"""\n\n`;
