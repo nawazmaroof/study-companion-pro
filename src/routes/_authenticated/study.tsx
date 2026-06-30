@@ -22,7 +22,7 @@ export const Route = createFileRoute("/_authenticated/study")({
   component: StudyPage,
 });
 
-const CATEGORIES = ["Java", "React", "SQL", "Hibernate", "Spring", "DevOps", "Other"];
+const CATEGORIES = ["Java", "Python", "React", "SQL", "MySQL", "JDBC", "Hibernate", "Spring", "DevOps", "Other"];
 
 type Topic = {
   id: string;
