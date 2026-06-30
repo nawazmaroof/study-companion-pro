@@ -22,7 +22,7 @@ export const Route = createFileRoute("/_authenticated/study")({
   component: StudyPage,
 });
 
-const CATEGORIES = ["Java", "React", "SQL", "Hibernate", "Spring", "DevOps", "Other"];
+const CATEGORIES = ["Java", "Python", "React", "SQL", "MySQL", "JDBC", "Hibernate", "Spring", "DevOps", "Other"];
 
 type Topic = {
   id: string;
@@ -182,7 +182,7 @@ function EmptyState() {
       <Sparkles className="size-8 text-primary" />
       <h2 className="mt-4 font-display text-3xl">Begin a topic to start studying</h2>
       <p className="mt-2 max-w-md text-sm text-muted-foreground">
-        Add Java, React, SQL, Spring, Hibernate, DevOps — anything you're learning. Drop your notes inside and My_Study_Place will turn them into quizzes, flashcards, summaries and cheatsheets.
+        Add Java, Python, React, SQL, MySQL, JDBC, Spring, Hibernate, DevOps — anything you're learning. Drop your notes inside and My_Study_Place will turn them into quizzes, flashcards, summaries and cheatsheets.
       </p>
       <TopicDialog mode="create" trigger={<Button className="mt-6"><Plus className="size-4" /> Add your first topic</Button>} />
     </div>

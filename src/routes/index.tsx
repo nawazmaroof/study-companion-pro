@@ -5,13 +5,13 @@ export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
       { title: "My_Study_Place — Your Personal Study Workspace" },
-      { name: "description", content: "Paste your notes. Get quizzes, flashcards, bullet summaries and code cheatsheets. Built for developers studying Java, React, SQL, Spring, Hibernate and DevOps." },
+      { name: "description", content: "Paste your notes. Get quizzes, flashcards, bullet summaries and code cheatsheets. Built for developers studying Java, Python, React, SQL, MySQL, JDBC, Spring, Hibernate and DevOps." },
     ],
   }),
   component: Landing,
 });
 
-const TRACKS = ["Java", "React", "SQL", "Hibernate", "Spring", "DevOps"];
+const TRACKS = ["Java", "Python", "React", "SQL", "MySQL", "JDBC", "Hibernate", "Spring", "DevOps"];
 
 function Landing() {
   return (
